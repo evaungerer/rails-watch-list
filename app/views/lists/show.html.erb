@@ -1,1 +1,7 @@
-<h1> Showing list of bookmarks </h1>
+<h1> Details of <%= @list.name %> list:</h1>
+
+    <% @list.movies.each do |movie| %>
+      <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+       <strong><%= movie.title %> <%= movie.rating %> </strong>
+            <small><%= movie.overview %></small>
+             <% end %>

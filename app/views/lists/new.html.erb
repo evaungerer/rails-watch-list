@@ -1,4 +1,7 @@
-<h1>Lists#new</h1>
-<p>Please add a new list below</p>
+<h1>Create a new list</h1>
+<p>Please add details of the new list below:</p>
 
-<%= render 'form', list: @list %>
+        <%= simple_form_for @list do |f| %>
+          <%= f.input :name, placeholder: 'Drama' %>
+          <%= f.submit class: 'btn btn-flat' %>
+        <% end %>
